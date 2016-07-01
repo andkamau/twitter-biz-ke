@@ -12,10 +12,11 @@
     <title>Shop Homepage - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="_static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
 
     <!-- Custom CSS -->
-    <link href="_static/css/shop-homepage.css" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/shop-homepage.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -99,10 +100,11 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="_static/js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="_static/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script>
 		function display_tweet(data) {
 			single_tweet = '<div class="col-sm-4 col-lg-4 col-md-4" data-url="'+ data.link +'">'
