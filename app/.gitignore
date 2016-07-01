@@ -1,0 +1,13 @@
+*.pyc
+*.DS_Store
+*.egg-info
+*.sqlite3
+
+.env
+settings.py
+
+docs/build/*
+
+celerybeat-schedule.db
+test_settings.py
+.coverage
