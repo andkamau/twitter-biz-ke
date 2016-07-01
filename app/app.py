@@ -28,7 +28,8 @@ class Twitter(object):
                 continue
             else:
                 true_count += 1
-                resultset['date'] = each.created_at
+                resultset['date'] = str(each.created_at)
+                resultset['id'] = each.id_str
                 resultset['name'] = each.user.screen_name
                 resultset['description'] = each.text.replace(config.TWITTER_HANDLE, '')
                 resultset['retweets'] = each.retweet_count
@@ -40,7 +41,7 @@ class Twitter(object):
                 try:
                     resultset['photo'] = each.entities['media'][0]['media_url']
                 except:
-                    resultset['photo'] = config.DEFAULT_PHOTO
+                    resultset['photo'] = each.user.profile_image_url
 
                 self.db.set(str(each.id), resultset)
 

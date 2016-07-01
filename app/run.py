@@ -14,4 +14,4 @@ if __name__ == '__main__':
                 counter, max_id, max_status.created_at, min_id, min_status.created_at)
         _max = min_id
         counter += 1
-        time.sleep(30)
+        time.sleep(5)

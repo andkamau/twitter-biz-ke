@@ -11,7 +11,6 @@ REDIS = dict(
 
 TWITTER_HANDLE = '@carolinespencer'
 TWITTER_STATUS_ID = '748567826907136000'
-DEFAULT_PHOTO = "https://d30y9cdsu7xlg0.cloudfront.net/png/370596-200.png"
 PORT = 8040
 
 

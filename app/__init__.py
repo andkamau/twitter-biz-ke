@@ -1,8 +1,7 @@
 from flask import (Flask, g, request, session, redirect,
         url_for, render_template, jsonify)
 from flask_script import Manager
-import redis
-import os
+import redis, os, datetime
 import config as config_file
 
 
@@ -17,17 +16,22 @@ def get_db():
 
 ### VIEWS
 
-@app.route('/data.json')
+@app.route('/')
 def get_data():
     '''
     '''
     try:
         db = get_db()
-        resultset = {}
+        resultset = []
         for result in db.keys('*'):
-            resultset[result] = db.get(result)
+            resultset.append(eval(db.get(result)))
+            if len(resultset) > 20:
+                break
 
-        return jsonify(resultset)
+        print "*" * 40
+        print resultset
+        print "*" * 40
+        return render_template('index.html', tweets=resultset)
 
     except Exception, err:
         err = "ERROR: %s" % str(err)
@@ -35,7 +39,7 @@ def get_data():
         return '<html><body>%s</body></html>' % err
         
 
-@app.route("/")
+@app.route("/test")
 def main():
     return render_template('index.html')
 
