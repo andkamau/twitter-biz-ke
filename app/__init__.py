@@ -1,9 +1,8 @@
 from flask import (Flask, g, request, session, redirect,
-        url_for, render_template)
+        url_for, render_template, jsonify)
 from flask_script import Manager
 import redis
 import os
-import api
 import config as config_file
 
 app = Flask(__name__,
@@ -16,23 +15,28 @@ def get_db():
         g.redis = redis.StrictRedis(**app.config['REDIS'])
     return g.redis
 
+### VIEWS
 
-class Twitter(object):
+@app.route('/data.json')
+def get_data():
+    '''
+    '''
+    try:
+        db = get_db()
+        resultset = {}
+        for result in db.keys('*'):
+            resultset[result] = db.get(result)
 
-    def __init__(self):
-        self.api = api.Api(**app.config['TWITTER_AUTH'])
+        return jsonify(resultset)
 
-    def fetch_all(self):
-        pass
+    except Exception, err:
+        err = "ERROR: %s" % str(err)
+        print err
+        return '<html><body>%s</body></html>' % err
 
+### END OF VIEWS
 
-class Database(object):
+manager = Manager(app)
 
-    def __init__(self):
-        self.db = get_db()
-
-    def save(self, key, val):
-        pass
-
-    def fetch(self, key):
-        return self.db.get('key') or None
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=config_file.PORT, debug=True)
