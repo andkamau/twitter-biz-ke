@@ -17,7 +17,7 @@ def get_db():
 
 ### VIEWS
 
-@app.route('/get_all')
+@app.route('/data.json')
 def get_data():
     '''
     '''
