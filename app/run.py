@@ -15,3 +15,6 @@ if __name__ == '__main__':
         _max = min_id
         counter += 1
         time.sleep(5)
+
+        if max_id == min_id:
+            break
