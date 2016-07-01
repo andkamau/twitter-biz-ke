@@ -1,5 +1,5 @@
 import redis, os, tweepy, config
-
+from flask import render_template
 
 def get_twitter_api_credentials():
     creds = os.getenv('TWITTER_API_CREDENTIALS').split(',')
@@ -52,3 +52,4 @@ class Twitter(object):
         print "Max ID: %s | Min ID: %s" % (str(max_id), str(min_id))
 
         return max_id, min_id
+

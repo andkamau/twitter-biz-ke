@@ -5,6 +5,9 @@ import redis
 import os
 import config as config_file
 
+print os.getenv('TW_STATIC')
+print "*" * 40
+
 app = Flask(__name__,
         template_folder=os.getenv('TW_TEMPLATES'),
         static_folder=os.getenv('TW_STATIC'))
@@ -33,6 +36,11 @@ def get_data():
         err = "ERROR: %s" % str(err)
         print err
         return '<html><body>%s</body></html>' % err
+        
+
+@app.route("/")
+def main():
+    return render_template('index.html')
 
 ### END OF VIEWS
 
