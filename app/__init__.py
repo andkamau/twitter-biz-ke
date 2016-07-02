@@ -28,9 +28,6 @@ def get_data():
             if len(resultset) > 300:
                 break
 
-        print "*" * 40
-        print resultset
-        print "*" * 40
         return render_template('index.html', tweets=resultset)
 
     except Exception, err:

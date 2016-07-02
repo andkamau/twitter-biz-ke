@@ -1,0 +1,12 @@
+*.pyc
+*.DS_Store
+*.egg-info
+*.sqlite3
+*.backup
+
+.env
+settings.py
+
+docs/build/*
+logs/*
+logs/

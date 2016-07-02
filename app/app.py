@@ -53,4 +53,3 @@ class Twitter(object):
         print "Max ID: %s | Min ID: %s" % (str(max_id), str(min_id))
 
         return max_id, min_id
-
