@@ -64,7 +64,7 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">KE Hustlers</p>
+                <p class="lead">{{ count }} Kenyan Hustlers. And counting...</p>
                 <div class="list-group">
                     <a href="#" class="list-group-item">Category 1</a>
                     <a href="#" class="list-group-item">Category 2</a>
@@ -127,8 +127,68 @@
                     </div>
                     {% endfor %}
                     
+                    {% for each in mid1_tweets %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{ each['photo'] }}" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
+                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
+                                </h4>
+                                <p>{{ each['description'] }}</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"> {{ each['retweets'] }} retweets</p>
+                                <p class="pull-right">{{ each['faves'] }} likes |</p>
+                                <p class="small">
+                                   <a href="#"><span class="glyphicon glyphicon-warning-sign"></span> Flag / Report</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
 
+                    {% for each in mid2_tweets %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{ each['photo'] }}" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
+                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
+                                </h4>
+                                <p>{{ each['description'] }}</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"> {{ each['retweets'] }} retweets</p>
+                                <p class="pull-right">{{ each['faves'] }} likes |</p>
+                                <p class="small">
+                                   <a href="#"><span class="glyphicon glyphicon-warning-sign"></span> Flag / Report</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
 
+                    {% for each in low_tweets %}
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{ each['photo'] }}" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
+                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
+                                </h4>
+                                <p>{{ each['description'] }}</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"> {{ each['retweets'] }} retweets</p>
+                                <p class="pull-right">{{ each['faves'] }} likes |</p>
+                                <p class="small">
+                                   <a href="#"><span class="glyphicon glyphicon-warning-sign"></span> Flag / Report</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <h4><a href="#">Like this template?</a>
                         </h4>

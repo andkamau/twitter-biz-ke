@@ -22,13 +22,15 @@ def get_data():
     '''
     try:
         db = get_db()
-        top_resultset = mid1_resultset = mid2_resultset = low_resultset = []
+        top_resultset = []
+        mid1_resultset = []
+        mid2_resultset = []
+        low_resultset = []
         for result in db.keys('*'):
             resp = eval(db.get(result))
             try:
                 if int(resp['retweets']) + int(resp['faves']) > 50:
                     top_resultset.append(resp)
-                    print resp['retweets']
                 elif int(resp['retweets']) + int(resp['faves']) > 25:
                     mid1_resultset.append(resp)
                 elif int(resp['retweets']) + int(resp['faves']) > 10:
@@ -40,11 +42,19 @@ def get_data():
             except:
                 low_resultset.append(resp)
 
+        print len(top_resultset)
+        print len(mid1_resultset)
+        print len(mid2_resultset)
+        print len(low_resultset)
+        print "*" * 40
+        count = len(top_resultset) + len(mid1_resultset) + len(mid2_resultset) + len(low_resultset)
+        
         return render_template('index.html',
                 top_tweets=top_resultset,
                 mid1_tweets=mid1_resultset,
                 mid2_tweets=mid2_resultset,
-                low_tweets=low_resultset)
+                low_tweets=low_resultset,
+                count=count)
 
     except Exception, err:
         err = "ERROR: %s" % str(err)
