@@ -25,7 +25,7 @@ def get_data():
         resultset = []
         for result in db.keys('*'):
             resultset.append(eval(db.get(result)))
-            if len(resultset) > 20:
+            if len(resultset) > 300:
                 break
 
         print "*" * 40
