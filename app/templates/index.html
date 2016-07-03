@@ -66,9 +66,9 @@
             <div class="col-md-3">
                 <p class="lead">{{ count }} #KOT Hustlers. And counting...</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">High Engagement</a>
-                    <a href="#" class="list-group-item">Mid Engagement</a>
-                    <a href="#" class="list-group-item">Low Engagement</a>
+                    <a href="#top_tweets" class="list-group-item">High Engagement</a>
+                    <a href="#mid1_tweets" class="list-group-item">Mid Engagement</a>
+                    <a href="#low_tweets" class="list-group-item">Low Engagement</a>
                 </div>
             </div>
 
@@ -85,6 +85,7 @@
                 <div class="row">
                     {% for each in top_tweets %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
+                        <a name="top_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
                             <div class="caption">
@@ -108,6 +109,7 @@
                     
                     {% for each in mid1_tweets %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
+                        <a name="mid1_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
                             <div class="caption">
@@ -131,6 +133,7 @@
 
                     {% for each in mid2_tweets %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
+                        <a name="mid2_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
                             <div class="caption">
@@ -154,6 +157,7 @@
 
                     {% for each in low_tweets %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
+                        <a name="low_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
                             <div class="caption">

@@ -41,7 +41,7 @@ class Twitter(object):
                 try:
                     resultset['photo'] = each.entities['media'][0]['media_url']
                 except:
-                    resultset['photo'] = each.user.profile_image_url
+                    resultset['photo'] = each.user.profile_image_url.replace('_normal', '')
 
                 self.db.set(str(each.id), resultset)
 
