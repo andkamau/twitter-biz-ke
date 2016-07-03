@@ -1,11 +1,12 @@
-import time
+import time, uuid
 from app import Twitter
 
 if __name__ == '__main__':
     tw = Twitter()
     counter = 0
     _max = None
-    print "Start time: %s" % time.asctime()
+    run_id = uuid.uuid4()
+    print "%s - Start time: %s" % (run_id, time.asctime())
     while counter < 1000:
         max_id, min_id = tw.fetch_all(maxid=_max)
 
@@ -20,4 +21,4 @@ if __name__ == '__main__':
         if max_id == min_id:
             break
     
-    print "Completion time: %s" % time.asctime()
+    print "%s - Completion time: %s" % (run_id, time.asctime())
