@@ -5,6 +5,7 @@ if __name__ == '__main__':
     tw = Twitter()
     counter = 0
     _max = None
+    print "Start time: %s" % time.asctime()
     while counter < 1000:
         max_id, min_id = tw.fetch_all(maxid=_max)
 
@@ -18,3 +19,5 @@ if __name__ == '__main__':
 
         if max_id == min_id:
             break
+    
+    print "Completion time: %s" % time.asctime()
