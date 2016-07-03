@@ -64,12 +64,18 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">{{ count }} #KOT Hustlers. And counting...</p>
+                <p class="lead"><strong>{{ count }}</strong> #KOT Hustlers. And counting...</p>
                 <div class="list-group">
                     <a href="#top_tweets" class="list-group-item">High Engagement</a>
                     <a href="#mid1_tweets" class="list-group-item">Mid Engagement</a>
                     <a href="#low_tweets" class="list-group-item">Low Engagement</a>
                 </div>
+                <h4><a href="#">Wanna Contribute?</a>
+                </h4>
+                <p>If you like this project and would like to contribute, then <a target="_blank" href="https://github.com/andkamau/twitter-biz-ke/">jump right in!</a></p>
+                <a class="btn btn-primary" target="_blank" href="mailto:andkamau@gmail.com">Say hi</a>
+                <p></p>
+                <a class="btn btn-primary" target="_blank" href="#">Read launch post</a>
             </div>
 
             <div class="col-md-9">
@@ -80,6 +86,7 @@
                         <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">It&#39;s good to promote eachother&#39;s businesses, ka uko na biz reply this tweet.. tell us about it, I&#39;ll retweet 😅 you never know</p>&mdash; Shosho Light (@carolinespencer) <a href="https://twitter.com/carolinespencer/status/748567826907136000">June 30, 2016</a></blockquote>
                     </div>
 
+
                 </div>
 
                 <div class="row">
@@ -88,10 +95,10 @@
                         <a name="top_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
+                                <p><a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}" role="button">Contact merchant</a></p>
                             <div class="caption">
-                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
-                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
-                                </h4>
+                                <h5><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a></h5>
+                                <p></p>
                                 <p>{{ each['description'] }}</p>
                             </div>
                             <div class="ratings">
@@ -109,16 +116,16 @@
                         </div>
                     </div>
                     {% endfor %}
-                    
+
                     {% for each in mid1_tweets %}
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <a name="mid1_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
+                                <p><a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}" role="button">Contact merchant</a></p>
                             <div class="caption">
-                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
-                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
-                                </h4>
+                                <h5><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a></h5>
+                                <p></p>
                                 <p>{{ each['description'] }}</p>
                             </div>
                             <div class="ratings">
@@ -142,10 +149,10 @@
                         <a name="mid2_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
+                                <p><a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}" role="button">Contact merchant</a></p>
                             <div class="caption">
-                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
-                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
-                                </h4>
+                                <h5><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a></h5>
+                                <p></p>
                                 <p>{{ each['description'] }}</p>
                             </div>
                             <div class="ratings">
@@ -169,10 +176,10 @@
                         <a name="low_tweets"></a>
                         <div class="thumbnail">
                             <img src="{{ each['photo'] }}" alt="">
+                                <p><a class="btn btn-primary btn-sm" href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}" role="button">Contact merchant</a></p>
                             <div class="caption">
-                                <h4 class="pull-right"><a href="https://twitter.com/intent/tweet?in_reply_to={{ each['id'] }}">Buy</a></h4>
-                                <h4><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a>
-                                </h4>
+                                <h5><a href="https://twitter.com/{{each['name']}}">@{{ each['name'] }}</a></h5>
+                                <p></p>
                                 <p>{{ each['description'] }}</p>
                             </div>
                             <div class="ratings">
@@ -191,11 +198,13 @@
                     </div>
                     {% endfor %}
 
+                    
+
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <h4><a href="#">Wanna Contribute?</a>
                         </h4>
                         <p>If you like this project and would like to contribute, then <a target="_blank" href="https://github.com/andkamau/twitter-biz-ke/">jump right in!</a></p>
-                        <a class="btn btn-primary" target="_blank" href="mailto:andkamau@gmail.com">Say hi</a>
+                        <a class="btn btn-primary" target="_blank" href="mailto:andkamau@gmail.com">Send Feedback</a>
                     </div>
 
                 </div>
@@ -215,7 +224,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; <a href="http://andkamau.xyz" target="_blank">Andrew Kamau</a> 2016</p>
+                    <p>A weekend project by <a href="http://andkamau.xyz" target="_blank">Andrew Kamau</a></p>
                 </div>
             </div>
         </footer>
