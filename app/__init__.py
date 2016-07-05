@@ -21,12 +21,16 @@ def get_data():
     '''
     '''
     try:
+        print "Client: {HTTP_USER_AGENT} - {REMOTE_ADDR} ".format(**request.__dict__['environ'])
         db = get_db()
         top_resultset = []
         mid1_resultset = []
         mid2_resultset = []
         low_resultset = []
         for result in db.keys('*'):
+            if str(result) in config_file.BLACKLIST:
+                print "%s blacklisted" % result
+                continue
             resp = eval(db.get(result))
             try:
                 if int(resp['retweets']) + int(resp['faves']) > 50:
