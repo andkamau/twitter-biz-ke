@@ -22,9 +22,11 @@ class Twitter(object):
         for each in result:
             ids.append(each.id)
             resultset = {}
-            # each is a tweepy.models.Status
             if not each.in_reply_to_status_id_str == config.TWITTER_STATUS_ID:
                 false_count += 1
+                continue
+            if each.id_str in config.BLACKLIST:
+                print "%s blacklisted" % each.id_str
                 continue
             else:
                 true_count += 1

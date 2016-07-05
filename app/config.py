@@ -20,3 +20,10 @@ TWITTER_AUTH['consumer_key'] = tw_creds[0]
 TWITTER_AUTH['consumer_secret'] = tw_creds[1]
 TWITTER_AUTH['access_token_key'] = tw_creds[2]
 TWITTER_AUTH['access_token_secret'] = tw_creds[3]
+
+BLACKLIST = [
+        '748806935047118848',
+        '748607496932233216',
+        '748622374111694849',
+        '748590662988275713'
+        ]
