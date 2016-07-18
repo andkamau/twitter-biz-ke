@@ -3,6 +3,7 @@ from flask import (Flask, g, request, session, redirect,
 from flask_script import Manager
 import redis, os, datetime
 import config as config_file
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -58,7 +59,8 @@ def get_data():
                 mid1_tweets=mid1_resultset,
                 mid2_tweets=mid2_resultset,
                 low_tweets=low_resultset,
-                count=count)
+                count=count,
+                now=str(datetime.now()))
 
     except Exception, err:
         err = "ERROR: %s" % str(err)
