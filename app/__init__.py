@@ -60,7 +60,7 @@ def get_data():
                 mid2_tweets=mid2_resultset,
                 low_tweets=low_resultset,
                 count=count,
-                now=str(datetime.now()))
+                now=db.get(config_file.TIME_KEY))
 
     except Exception, err:
         err = "ERROR: %s" % str(err)

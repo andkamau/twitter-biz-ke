@@ -21,6 +21,8 @@ TWITTER_AUTH['consumer_secret'] = tw_creds[1]
 TWITTER_AUTH['access_token_key'] = tw_creds[2]
 TWITTER_AUTH['access_token_secret'] = tw_creds[3]
 
+TIME_KEY = "TW_COMPLETION_TIME"
+
 BLACKLIST = [
         '748806935047118848',
         '748607496932233216',
@@ -48,4 +50,6 @@ BLACKLIST = [
         '748732523165790208',
         '748591537441763328',
         '748782397399797760',
+        TIME_KEY # laziness
         ]
+

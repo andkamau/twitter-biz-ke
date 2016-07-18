@@ -1,5 +1,6 @@
 import time, uuid
 from app import Twitter
+from config import TIME_KEY
 
 if __name__ == '__main__':
     tw = Twitter()
@@ -21,4 +22,6 @@ if __name__ == '__main__':
         if max_id == min_id:
             break
     
-    print "%s - Completion time: %s" % (run_id, time.asctime())
+    now = time.asctime()
+    print "%s - Completion time: %s" % (run_id, now)
+    tw.db.set(TIME_KEY, now)
